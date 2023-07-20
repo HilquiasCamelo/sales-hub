@@ -23,12 +23,16 @@ import { MatDividerModule } from '@angular/material/divider';
 
 // Project Components
 import { NavComponent } from './components/nav/nav.component';
-import { ScreenSizeService } from './shared/screen-size.service';
+import { ScreenSizeService } from './shared/service/screen-size.service';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

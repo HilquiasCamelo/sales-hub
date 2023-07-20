@@ -1,3 +1,89 @@
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* Estilos personalizados para o componente de navegação */
+
+/* Cor de fundo do componente de navegação */
+.container {
+  height: 100%;
+}
+
+/* Estilo dos links principais */
+.nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mat-nav-list a  {
+  margin-right: 8px; /* Adicionando espaço entre o ícone e o nome */
+}
+
+/* Estilo dos sub-links */
+.sidenav {
+  overflow-y: hidden;
+  width: 13rem;
+  color: #444654;
+  background-image: linear-gradient(to bottom, #202123, #262829);
+}
+
+.sidenav a {
+  color: aliceblue;
+}
+
+.sidenav .sub-link {
+  color: #ff7f50; /* Define a cor desejada para os sublinks (laranja) */
+}
+
+.sidenav i {
+  margin-right: 0.6rem;
+}
+
+.menu {
+  margin: 1rem 0 0 1rem;
+  color: white;
+  background: #202123;
+}
+
+.logout-icon {
+  bottom: 1rem; /* Ajuste a posição vertical conforme necessário */
+  margin-top: 5rem;
+  transition: bottom 0.3s; /* Adicionamos uma transição suave para o movimento */
+}
+
+.search-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background-color: #202123;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  display: none;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
   }
+  100% {
+    width: 150px;
+  }
+}
+
+.active .search-input {
+  display: block;
+}
+.mat-expansion-panel {
+  --mat-expansion-container-shape: 0px;
+  display:contents;
+}
+
+.nav-list-wrapper::-webkit-scrollbar-thumb {
+  background: #ff7f50; /* Cor da barra de rolagem */
+  border-radius: 5px; /* Arredondar os cantos da barra de rolagem */
+}

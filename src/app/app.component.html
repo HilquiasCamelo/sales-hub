@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <app-nav></app-nav>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <button class="menu mat-elevation-z8" type="button" (click)="drawer.toggle()" mat-icon-button>
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Search Field -->
+  <div class="search-icon" [ngClass]="{ 'active': showSearch }" *ngIf="screenSizeService.isDesktop()">
+    <button #menuButton mat-icon-button (click)="toggleSearch()">
+      <i class="fas fa-search"></i>
+    </button>
+    <input *ngIf="showSearch" matInput placeholder="Search" class="search-input">
+  </div>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>

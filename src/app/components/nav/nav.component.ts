@@ -1,7 +1,8 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs';
-import { ScreenSizeService } from 'src/app/shared/screen-size.service';
+import { ScreenSizeService } from 'src/app/shared/service/screen-size.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -21,10 +22,15 @@ showCatalogSubLinks: any;
 
 
   constructor(private renderer: Renderer2, 
-    private breakpointObserver: BreakpointObserver, public screenSizeService: ScreenSizeService) { }
+    private breakpointObserver: BreakpointObserver, 
+    public screenSizeService: ScreenSizeService,
+    private router: Router) { }
 
 
-  ngOnInit() {ScreenSizeService }
+  ngOnInit() {
+    ScreenSizeService;
+    this.router.navigate(['home'])
+  }
 
   toggleSearch() {
     this.showSearch = !this.showSearch;

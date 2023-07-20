@@ -75,12 +75,33 @@
 .active .search-input {
   display: block;
 }
+
 .mat-expansion-panel {
-  --mat-expansion-container-shape: 0px;
-  display:contents;
+  --mat-expansion-panel-header-height: 48px; /* Altura desejada do cabeçalho do painel de expansão */
 }
 
-.nav-list-wrapper::-webkit-scrollbar-thumb {
-  background: #ff7f50; /* Cor da barra de rolagem */
-  border-radius: 5px; /* Arredondar os cantos da barra de rolagem */
+.nav-list a span {
+  font-size:1rem; /* Tamanho da fonte - 2 rem */
+  margin-left: 0.6rem; /* Espaçamento à esquerda - 1 rem */
+}
+
+.nav-list a i {
+  font-size: 1.2rem; /* Tamanho do ícone - 2.5 rem */
+}
+
+.custom-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+  color: white; /* Cor do texto do título */
+  font-weight: bold; /* Fonte em negrito */
+  font-size:1rem; /* Tamanho da fonte */
+}
+
+.custom-title i {
+  font-size: 1.2rem; /* Tamanho do ícone - 2.5 rem */
+}
+
+.custom-title .custom-text {
+  margin-left: 1rem; /* Espaçamento à esquerda - 1 rem */
 }
