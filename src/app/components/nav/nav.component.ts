@@ -9,9 +9,16 @@ import { ScreenSizeService } from 'src/app/shared/screen-size.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+showUserSubLinks: any;
+showCatalogSubLinks: any;
+
   @ViewChild('drawer') drawer: ElementRef;
   @ViewChild('menuButton') menuButton: ElementRef;
   showSearch = false;
+  showRecommendationSubLinks: boolean;
+ 
+  showCartSubLinks = false;
+
 
   constructor(private renderer: Renderer2, 
     private breakpointObserver: BreakpointObserver, public screenSizeService: ScreenSizeService) { }
@@ -21,6 +28,26 @@ export class NavComponent implements OnInit {
 
   toggleSearch() {
     this.showSearch = !this.showSearch;
+  }
+
+
+  toggleSubLinks(sublink: string) {
+    switch (sublink) {
+      case 'catalog':
+        this.showCatalogSubLinks = !this.showCatalogSubLinks;
+        break;
+      case 'cart':
+        this.showCartSubLinks = !this.showCartSubLinks;
+        break;
+      case 'user':
+        this.showUserSubLinks = !this.showUserSubLinks;
+        break;
+      case 'recommendation':
+        this.showRecommendationSubLinks = !this.showRecommendationSubLinks;
+        break;
+      default:
+        break;
+    }
   }
 
 }

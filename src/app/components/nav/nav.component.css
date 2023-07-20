@@ -1,21 +1,31 @@
+/* Estilos personalizados para o componente de navegação */
+
+/* Cor de fundo do componente de navegação */
 .container {
   height: 100%;
 }
 
+/* Estilo dos links principais */
 .nav-list a {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Estilo dos sub-links */
 .sidenav {
+  overflow-y: hidden;
   width: 13rem;
   color: #444654;
-  background: #202123;
+  background-image: linear-gradient(to bottom, #202123, #262829);
 }
 
 .sidenav a {
   color: aliceblue;
+}
+
+.sidenav .sub-link {
+  color: #ff7f50; /* Define a cor desejada para os sublinks (laranja) */
 }
 
 .sidenav i {
@@ -29,9 +39,9 @@
 }
 
 .logout-icon {
-  position: fixed;
-  bottom: 1px;
-  left: 1px;
+  bottom: 1rem; /* Ajuste a posição vertical conforme necessário */
+  margin-top: 5rem;
+  transition: bottom 0.3s; /* Adicionamos uma transição suave para o movimento */
 }
 
 .search-icon {
@@ -64,4 +74,13 @@
 
 .active .search-input {
   display: block;
+}
+.mat-expansion-panel {
+  --mat-expansion-container-shape: 0px;
+  display:contents;
+}
+
+.nav-list-wrapper::-webkit-scrollbar-thumb {
+  background: #ff7f50; /* Cor da barra de rolagem */
+  border-radius: 5px; /* Arredondar os cantos da barra de rolagem */
 }

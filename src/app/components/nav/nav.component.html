@@ -1,11 +1,12 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list class="nav-list">
+      <!-- Main links -->
       <a mat-list-item routerLink="/">
         <i class="fas fa-home"></i>
         <span>Home</span>
       </a>
-      <a mat-list-item routerLink="/clientes">
+      <a mat-list-item routerLink="/clients">
         <i class="fas fa-users"></i>
         <span>Clients</span>
       </a>
@@ -13,15 +14,92 @@
         <i class="fas fa-user-circle"></i>
         <span>Profile</span>
       </a>
-      <a mat-list-item href="https://github.com/your-username">
-        <i class="fab fa-github"></i>
-        <span>Github</span>
+      <a mat-list-item routerLink="/products">
+        <i class="fas fa-box-open"></i>
+        <span>Products</span>
       </a>
-      <a mat-list-item routerLink="/logout" class="logout-icon">
-        <i class="fas fa-sign-out-alt"></i>
-        <span>Logout</span>
+      <mat-divider></mat-divider>
+      <!-- Sub-links for Catalog -->
+      <mat-expansion-panel (opened)="toggleSubLinks('catalog')" (closed)="toggleSubLinks('catalog')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="fas fa-book"></i> Catalog
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list *ngIf="showCatalogSubLinks">
+          <a mat-list-item routerLink="/catalog">
+            <i class="fas fa-book"></i>
+            <span>View Catalog</span>
+          </a>
+          <a mat-list-item routerLink="/catalog/search">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <!-- Sub-links for Cart -->
+      <mat-expansion-panel (opened)="toggleSubLinks('cart')" (closed)="toggleSubLinks('cart')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="fas fa-shopping-cart"></i> Cart
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list *ngIf="showCartSubLinks">
+          <a mat-list-item routerLink="/cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>View Cart</span>
+          </a>
+          <a mat-list-item routerLink="/cart/checkout">
+            <i class="fas fa-credit-card"></i>
+            <span>Checkout</span>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <!-- Sub-links for User Management -->
+      <mat-expansion-panel (opened)="toggleSubLinks('user')" (closed)="toggleSubLinks('user')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="fas fa-user"></i> User Management
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list *ngIf="showUserSubLinks">
+          <a mat-list-item routerLink="/user">
+            <i class="fas fa-user"></i>
+            <span>Manage Users</span>
+          </a>
+          <a mat-list-item routerLink="/user/profile">
+            <i class="fas fa-id-card"></i>
+            <span>Profile Management</span>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <!-- Sub-links for Recommendation -->
+      <mat-expansion-panel (opened)="toggleSubLinks('recommendation')" (closed)="toggleSubLinks('recommendation')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="fas fa-lightbulb"></i> Recommendation
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list *ngIf="showRecommendationSubLinks">
+          <!-- Add sub-links for Recommendation service here -->
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <!-- Additional Links -->
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/financial-management">
+        <i class="fas fa-money-bill"></i>
+        <span>Financial Management</span>
+      </a>
+      <a mat-list-item routerLink="/registries">
+        <i class="fas fa-clipboard-list"></i>
+        <span>Registries</span>
       </a>
     </mat-nav-list>
+    <!-- Logout Icon -->
+    <a mat-list-item routerLink="/logout" class="logout-icon">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
+    </a>
   </mat-drawer>
 
   <div class="sidenav-content">
@@ -32,10 +110,9 @@
 
   <!-- Search Field -->
   <div class="search-icon" [ngClass]="{ 'active': showSearch }" *ngIf="screenSizeService.isDesktop()">
-  <button #menuButton mat-icon-button (click)="toggleSearch()">
-    <i class="fas fa-search"></i>
-  </button>
-  <input *ngIf="showSearch" matInput placeholder="Search" class="search-input">
-</div>
-  
+    <button #menuButton mat-icon-button (click)="toggleSearch()">
+      <i class="fas fa-search"></i>
+    </button>
+    <input *ngIf="showSearch" matInput placeholder="Search" class="search-input">
+  </div>
 </mat-drawer-container>

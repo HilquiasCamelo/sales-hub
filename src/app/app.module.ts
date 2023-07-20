@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
 
 // Project Components
 import { NavComponent } from './components/nav/nav.component';
@@ -49,7 +50,9 @@ import { ScreenSizeService } from './shared/screen-size.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatDividerModule
   ],
   providers: [ScreenSizeService],
   bootstrap: [AppComponent]
