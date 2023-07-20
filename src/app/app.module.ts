@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+
+// Project Components
 import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
