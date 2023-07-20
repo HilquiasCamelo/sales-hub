@@ -22,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 // Project Components
 import { NavComponent } from './components/nav/nav.component';
+import { ScreenSizeService } from './shared/screen-size.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { NavComponent } from './components/nav/nav.component';
     HttpClientModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [ScreenSizeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

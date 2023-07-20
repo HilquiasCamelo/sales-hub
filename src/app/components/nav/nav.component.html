@@ -1,33 +1,41 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side">
-      <mat-nav-list class="nav-list">
-        <a mat-list-item routerLink="/">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </a>
-        <a mat-list-item routerLink="/clientes">
-          <i class="fas fa-users"></i>
-          <span>Clientes</span>
-        </a>
-        <a mat-list-item routerLink="/perfil">
-          <i class="fas fa-user-circle"></i>
-          <span>Perfil</span>
-        </a>
-        <a mat-list-item href="https://github.com/seu-usuario">
-          <i class="fab fa-github"></i>
-          <span>Github</span>
-        </a>
-        <a mat-list-item routerLink="/logout" class="logout-icon">
-          <i class="fas fa-sign-out-alt"></i>
-          <span>Logout</span>
-        </a>
-      </mat-nav-list>
-    </mat-drawer>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a mat-list-item routerLink="/clientes">
+        <i class="fas fa-users"></i>
+        <span>Clients</span>
+      </a>
+      <a mat-list-item routerLink="/profile">
+        <i class="fas fa-user-circle"></i>
+        <span>Profile</span>
+      </a>
+      <a mat-list-item href="https://github.com/your-username">
+        <i class="fab fa-github"></i>
+        <span>Github</span>
+      </a>
+      <a mat-list-item routerLink="/logout" class="logout-icon">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <button class="menu mat-elevation-z8" type="button" (click)="drawer.toggle()" mat-icon-button>
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Search Field -->
+  <div class="search-icon" [ngClass]="{ 'active': showSearch }" *ngIf="screenSizeService.isDesktop()">
+  <button #menuButton mat-icon-button (click)="toggleSearch()">
+    <i class="fas fa-search"></i>
+  </button>
+  <input *ngIf="showSearch" matInput placeholder="Search" class="search-input">
+</div>
   
-    <div class="sidenav-content">
-      <button class="menu mat-elevation-z8" type="button" (click)="drawer.toggle()" mat-icon-button>
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </mat-drawer-container>
-  
+</mat-drawer-container>
